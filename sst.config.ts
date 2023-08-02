@@ -1,14 +1,14 @@
 import { SSTConfig } from "sst";
-import { API } from "./stacks/MyStack";
+import { StorageStack } from "./stacks/StorageStack.js";
 
 export default {
-  config(_input) {
+  config(_input: any) {
     return {
-      name: "notes",
-      region: "us-east-1",
+        name: "notes",
+        region: "us-east-1",
     };
   },
-  stacks(app) {
-    app.stack(API);
-  }
+  stacks(app: any) {
+    app.stack(StorageStack);
+  },
 } satisfies SSTConfig;
