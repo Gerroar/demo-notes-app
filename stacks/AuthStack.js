@@ -34,7 +34,7 @@ export function AuthStack({ stack, app}) {
         UserPoolClientId: auth.userPoolClientId,
     });
 
-    // Return the authb resource
+    // Return the auth resource
     return {
         auth,
     };
