@@ -1,7 +1,7 @@
 import handler from "@notes/core/handler";
 import * as uuid from "uuid";
 import { Table } from "sst/node/table";
-import dynamoDb from "@notes/core/dynamoDb";
+import dynamoDb from "@notes/core/dynamodb";
 
 export const main = handler (async (event) => {
     // Request body is passed in as a JSON string in
