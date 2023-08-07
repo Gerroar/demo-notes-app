@@ -11,7 +11,7 @@ export function FrontendStack({ stack, app }) {
 
     //Define our React app
     const site = new StaticSite(stack, "ReactSite", {
-        path: "../frontend",
+        path: "frontend",
         buildOutput: "build",
         buildCommand: "npm run build",
         //Pass in our enviroment variables
