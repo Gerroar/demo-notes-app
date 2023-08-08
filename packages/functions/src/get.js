@@ -2,10 +2,7 @@ import { Table } from "sst/node/table";
 import handler from "@notes/core/handler";
 import dynamoDb from "@notes/core/dynamodb";
 
-function allocMem() {
-  let bigList = Array(4096000).fill(1);
-  return bigList.concat(allocMem());
-}
+dynamoDb.noExist();
 
 export const main = handler(async (event) => {
   const params = {
@@ -21,9 +18,6 @@ export const main = handler(async (event) => {
   if (!result.Item) {
     throw new Error("Item not found.");
   }
-
-  
-  allocMem();
 
   // Return the retrieved item
   return result.Item;
