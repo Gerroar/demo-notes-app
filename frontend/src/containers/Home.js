@@ -13,9 +13,9 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   
   function loadNotes() {
-    return API.get("notes", "/invalid_path");
+    return API.put("notes", "/notes");
   }
-  
+
   useEffect(() => {
     async function onLoad() {
       if (!isAuthenticated) {
