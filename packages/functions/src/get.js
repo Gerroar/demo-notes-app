@@ -2,8 +2,6 @@ import { Table } from "sst/node/table";
 import handler from "@notes/core/handler";
 import dynamoDb from "@notes/core/dynamodb";
 
-dynamoDb.noExist();
-
 // Wrong handler function name
 export const main2 = handler(async (event) => {
   const params = {
