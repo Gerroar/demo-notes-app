@@ -11,7 +11,11 @@ export default function Home() {
   const [notes, setNotes] = useState([]);
   const { isAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(true);
-
+  
+  function loadNotes() {
+    return API.get("notes", "/invalid_path");
+  }
+  
   useEffect(() => {
     async function onLoad() {
       if (!isAuthenticated) {
@@ -31,9 +35,6 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated]);
   
-  function loadNotes() {
-    return API.get("notes", "/invalid_path");
-  }
 
   function renderNotesList(notes) {
     return (
